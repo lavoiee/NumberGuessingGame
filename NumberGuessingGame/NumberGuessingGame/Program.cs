@@ -119,7 +119,7 @@ namespace NumberGuessingGame
             int.TryParse(Console.ReadLine(), out playersGuess);
             numbersPlayerHasGuessed[roundNumber] = playersGuess;
 
-            Console.WriteLine("Player guess from array: " + numbersPlayerHasGuessed[roundNumber]);
+            //Console.WriteLine("Player guess from array: " + numbersPlayerHasGuessed[roundNumber]);
             return playersGuess;
         }
         
@@ -149,15 +149,25 @@ namespace NumberGuessingGame
             }
             else
             {
-                playingRound = true;
-                DisplayLoseScreen();
-                DisplayContinuePrompt();
+                if (playersGuess == numberToGuess)
+                {
+                    Console.WriteLine("You guessed: " + playersGuess);
+                    Console.WriteLine("Congratulations! You guessed the secret number.");
+                    DisplayContinuePrompt();
+                    playingRound = true;
+                }
+                else
+                {
+                    DisplayLoseScreen();
+                    playingRound = true;
+                }                               
             }           
         }
         
         public static void DisplayLoseScreen()
         {
             Console.WriteLine("I'm sorry you've run out of chances.");
+            DisplayContinuePrompt();
         }
 
         public static int UpdateAndDisplayRoundStatus()
@@ -200,6 +210,7 @@ namespace NumberGuessingGame
 
         public static void DisplayPlayerStats()
         {
+            double percentageOfWins;
             DisplayReset();
             Console.WriteLine($"Round number: {roundNumber}");
             Console.WriteLine($"Number of wins: {numberOfWins}");
@@ -208,7 +219,8 @@ namespace NumberGuessingGame
             //
             // Parse the following output to display the percentage.
             //
-            Console.WriteLine($"Percentage of wins: {numberOfWins/(numberOfWins + numberOfLosses)}");
+            percentageOfWins = (double)(numberOfWins / (numberOfWins + numberOfLosses));
+            Console.WriteLine($"Percentage of wins: {percentageOfWins}");
             DisplayContinuePrompt();
             DisplayContinueQuitPrompt();
             
