@@ -11,14 +11,12 @@ namespace NumberGuessingGame
         //
         // Defining constant global variables
         //
-
         private const int MAX_NUMBER_OF_PLAYER_GUESSES = 4;
         private const int MAX_NUMBER_TO_GUESS = 10;
 
         //
         // Defining other global variables
         //
-
         private static int playersGuess;
         private static int numberToGuess;
         private static int roundNumber;
@@ -249,11 +247,16 @@ namespace NumberGuessingGame
                 resetNumbersPlayerHasGuessed();
                 InitializeGame();
             }
+            else
+            {
+                playingGame = false;
+            }
             DisplayContinuePrompt();
         }
 
         public static void resetNumbersPlayerHasGuessed()
         {
+            playingRound = false;
             playersGuess = 0;
             for (int i = 0; i <= (MAX_NUMBER_OF_PLAYER_GUESSES -1); i++)
             {
