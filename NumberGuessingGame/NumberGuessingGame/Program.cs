@@ -88,12 +88,7 @@ namespace NumberGuessingGame
                     UpdateAndDisplayRoundStatus();
                     
                 }
-            //
-            // There is a problem here. It does not enter into playing another round.
-            // It just keeps displaying the Player stats over and over angin. Likewise,
-            // if you type "no" in response to the question of whether or not you want to play 
-            // again it also just displays the stats again. If I move it up to inside the inner
-            // while loop above it behaves very strange. A little help would be appriciated.
+            
             DisplayPlayerStats();    
             }
             DisplayClosingScreen();
