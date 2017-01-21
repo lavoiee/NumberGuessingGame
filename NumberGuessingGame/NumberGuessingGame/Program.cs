@@ -217,12 +217,21 @@ namespace NumberGuessingGame
             //
             total = numberOfWins + numberOfLosses;
             percentageOfWins = (double)numberOfWins/total;
-            Console.WriteLine($"Percentage of wins: {percentageOfWins}");
+            Console.WriteLine($"Percentage of wins:{percentagizer(percentageOfWins)}%");
+            //Console.WriteLine($"Percentage of wins: {percentageOfWins}");
             DisplayContinuePrompt();
             DisplayContinueQuitPrompt();
             
         }
-
+        //
+        // Return a percentage from a decimal value
+        //
+        public static double percentagizer(double percent)
+        {
+            double percentage = percent;
+            percentage *= 100.0;
+            return percentage;
+        }
 
         public static void DisplayClosingScreen()
         {
