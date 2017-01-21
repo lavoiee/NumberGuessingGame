@@ -210,6 +210,7 @@ namespace NumberGuessingGame
 
         public static void DisplayPlayerStats()
         {
+            int total;
             double percentageOfWins;
             DisplayReset();
             Console.WriteLine($"Round number: {roundNumber}");
@@ -219,7 +220,8 @@ namespace NumberGuessingGame
             //
             // Parse the following output to display the percentage.
             //
-            percentageOfWins = (double)(numberOfWins / (numberOfWins + numberOfLosses));
+            total = numberOfWins + numberOfLosses;
+            percentageOfWins = (double)numberOfWins/total;
             Console.WriteLine($"Percentage of wins: {percentageOfWins}");
             DisplayContinuePrompt();
             DisplayContinueQuitPrompt();
