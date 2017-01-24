@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace NumberGuessingGame
 {
+    // Combined branch
     class Program
     {
         //
