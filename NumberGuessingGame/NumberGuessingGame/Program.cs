@@ -318,6 +318,7 @@ namespace TheNumberGuessingGame
             Console.WriteLine($"Percentage of wins: {percentagizer(percentageOfWins)}%");
             Console.WriteLine();
             Console.WriteLine();
+
             DisplayContinuePrompt();
 
         }
