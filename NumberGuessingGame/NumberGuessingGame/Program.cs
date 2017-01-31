@@ -338,7 +338,7 @@ namespace TheNumberGuessingGame
                 DisplayReset();
 
                 //
-                // ask and validate if user wants to play another round
+                // ask and validate if user wants to play another round.
                 //
 
                 bool continueRound = ValidateYesNo("Would you like to play another round?");
